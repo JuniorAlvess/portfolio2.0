@@ -1,0 +1,184 @@
+:root {
+    --primary-color: #FAFAFB;
+    --second-color: #07080A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 75vw;
+
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+body {
+    background: var(--primary-color);
+    color: var(--second-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    header {
+
+        nav>ul {
+            background: var(--primary-color);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 1rem 0;
+            margin-bottom: 1rem;
+
+            li {
+                margin: 0 1rem;
+
+                font-size: clamp(1rem, 1.2vw, 1.8rem);
+                font-weight: bold;
+                font-family: 'Roboto', sans-serif;
+
+                color: var(--second-color);
+                text-decoration: none;
+                transition: opacity 0.3s;
+
+                cursor: pointer;
+                list-style: none;
+
+                &:hover {
+                    opacity: 70%;
+                }
+            }
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 40%;
+                height: 100%;
+                filter: grayscale(100%);
+
+                transition: filter 0.3s;
+
+                &:hover {
+                    filter: grayscale(0%);
+                }
+            }
+
+            article {
+                width: 40%;
+            }
+
+            article>h1 {
+                font-size: clamp(1.5rem, 2.027vw, 3rem);
+                font-weight: 700;
+                font-family: 'Roboto', sans-serif;
+
+                color: var(--second-color);
+                text-decoration: none;
+                transition: opacity 0.3s;
+
+                letter-spacing: .05rem;
+            }
+
+            article>p {
+                margin: 1rem auto 2rem;
+                font-size: clamp(.5rem, 1vw, 1.8rem);
+                font-size: .8rem;
+                font-weight: bold;
+                font-family: 'Poppins', sans-serif;
+
+                color: var(--second-color);
+                text-decoration: none;
+                transition: opacity 0.3s;
+
+                letter-spacing: .02rem;
+            }
+
+            article>button {
+
+                font-size: clamp(1rem, 1vw, 1.8rem);
+                font-weight: 400;
+                font-family: 'Roboto', sans-serif;
+
+                padding: .5rem 1rem;
+
+                color: var(--second-color);
+                text-decoration: none;
+
+                cursor: pointer;
+                list-style: none;
+
+                border-radius: .5rem;
+
+                transition: all 0.3s ease-in-out;
+                letter-spacing: .02rem;
+
+                &:first-of-type {
+                    background: var(--second-color);
+                    color: var(--primary-color);
+                    margin-right: .5rem;
+
+                    border: 1px solid var(--second-color);
+
+                    &:hover {
+                        background: var(--primary-color);
+                        color: var(--second-color);
+                        border: 1px solid var(--second-color);
+                    }
+                }
+
+                &+button {
+                    margin-left: 1rem;
+                    color: var(--second-color);
+                    background: var(--primary-color);
+                    border: 1px solid var(--second-color);
+
+                    &:hover {
+                        background: var(--second-color);
+                        color: var(--primary-color);
+                        border: 1px solid var(--primary-color);
+                    }
+                }
+
+                &:hover {
+                    opacity: 70%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        width: 95vw;
+    }
+
+}
+
+@media (max-width: 850px) {
+    .container>header>section {
+        flex-direction: column;
+
+        img {
+            width: 60%;
+        }
+
+        article {
+            width: 100%;
+            text-align: center;
+
+            margin-top: 2rem;
+            padding: 0 .5rem;
+        }
+    }
+    
+}
