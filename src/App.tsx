@@ -1,19 +1,30 @@
 import photo from './assets/mario.png';
-import imageProject from './assets/project.png';
-
-import { FiGithub, FiEye } from 'react-icons/fi';
 import projects from './assets/projects.json';
+import Project from './components/project';
+
+import { AiOutlineHome } from 'react-icons/ai';
+import { GrProjects, GrContact } from 'react-icons/gr';
+import { CgUser } from 'react-icons/cg'
+
 
 function App() {
   console.log(projects);
   return (
     <div className="container">
+      <nav className='side-menu'>
+        <ul>
+          <li><a href="#work"> <span>Work</span> <AiOutlineHome className='icon-menu' /> </a></li>
+          <li> <a href="#work"> <span>Resume</span> <GrProjects className='icon-menu' /> </a> </li>
+          <li> <a href="#work"> <span>Contact</span> <GrContact className='icon-menu' color='#fff' /> </a> </li>
+        </ul>
+      </nav>
+
       <header>
         <nav>
           <ul>
-            <li><a href="#work">Work</a></li>
-            <li>Resume</li>
-            <li>Contact</li>
+            <li> <a href="#work">Work</a> </li>
+            <li> <a href="#work">Resume</a> </li>
+            <li> <a href="#work"> Contact</a> </li>
           </ul>
         </nav>
 
@@ -31,7 +42,9 @@ function App() {
               role="Contact me">Contact me</button>
             <button
               title='Check my work'
-              role='Check my work'>Check my work</button>
+              role='Check my work'
+              onClick={() => { window.location.href = '#work' }}
+            >Check my work</button>
           </article>
         </section>
       </header>
@@ -46,88 +59,12 @@ function App() {
           </p>
 
           <div className="filter-projects">
-            <button>All (2)</button>
+            <button>All (5)</button>
             <button>Front-end (5)</button>
             <button>Back-end (0)</button>
           </div>
           <div className="project-container">
-            <div className="project">
-              <div className="img-container">
-                <img src={imageProject} alt="" draggable={false} />
-              </div>
-              <h3>Title</h3>
-              <div className="techs">
-                <strong>React.js</strong>
-                <strong>Node.js</strong>
-                <strong>Sass</strong>
-                <strong>+3</strong>
-              </div>
-              <p className='description'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quas saepe sed! Nemo sunt dolore quos numquam ducimus exercitationem accusamus nesciunt consequatur rem? Esse sed quam soluta laudantium ipsam dolor.
-              </p>
-
-              <div className="button-container">
-                <button><FiEye />  Preview</button><button><FiGithub /> Github Repo</button>
-              </div>
-            </div>
-            <div className="project">
-              <div className="img-container">
-                <img src={imageProject} alt="" draggable={false} />
-              </div>
-              <h3>Title</h3>
-              <div className="techs">
-                <strong>React.js</strong>
-                <strong>Node.js</strong>
-                <strong>Sass</strong>
-                <strong>+3</strong>
-              </div>
-              <p className='description'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quas saepe sed! Nemo sunt dolore quos numquam ducimus exercitationem accusamus nesciunt consequatur rem? Esse sed quam soluta laudantium ipsam dolor.
-              </p>
-
-              <div className="button-container">
-                <button><FiEye />  Preview</button><button><FiGithub /> Github Repo</button>
-              </div>
-            </div>
-            <div className="project">
-              <div className="img-container">
-                <img src={imageProject} alt="" draggable={false} />
-              </div>
-              <h3>Title</h3>
-              <div className="techs">
-                <strong>React.js</strong>
-                <strong>Node.js</strong>
-                <strong>Sass</strong>
-                <strong>+3</strong>
-              </div>
-              <p className='description'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quas saepe sed! Nemo sunt dolore quos numquam ducimus exercitationem accusamus nesciunt consequatur rem? Esse sed quam soluta laudantium ipsam dolor.
-              </p>
-
-              <div className="button-container">
-                <button><FiEye />  Preview</button><button><FiGithub /> Github Repo</button>
-              </div>
-            </div>
-            <div className="project">
-              <div className="img-container">
-                <img src={imageProject} alt="" draggable={false} />
-              </div>
-              <h3>Title</h3>
-              <div className="techs">
-                <strong>React.js</strong>
-                <strong>Node.js</strong>
-                <strong>Sass</strong>
-                <strong>+3</strong>
-              </div>
-              <p className='description'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quas saepe sed! Nemo sunt dolore quos numquam ducimus exercitationem accusamus nesciunt consequatur rem? Esse sed quam soluta laudantium ipsam dolor.
-              </p>
-
-              <div className="button-container">
-                <button><FiEye />  Preview</button><button><FiGithub /> Github Repo</button>
-              </div>
-            </div>
-
+            {projects.map((project, index) => <Project key={index} project={project} />)}
           </div>
         </section>
       </main>
