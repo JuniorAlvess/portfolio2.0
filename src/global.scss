@@ -30,7 +30,6 @@ body {
     margin: 0 auto;
     padding: 0 15px;
 
-    // Resolver essa bagaça
     nav.side-menu {
         position: fixed;
         right: 0;
@@ -57,43 +56,51 @@ body {
                 font-weight: bold;
                 font-family: 'Roboto', sans-serif;
 
-                color: var(--second-color);
                 text-decoration: none;
 
+                border-radius: 15% / 50%;
                 cursor: pointer;
                 list-style: none;
+                transition: all 0.3s ease-in;
+            }
+
+            li:hover {
+                background: var(--second-color);
+
+                a {
+                    color: var(--primary-color);
+                }
+                span {
+                    display: block;
+                }
             }
 
             li a {
-                background: var(--second-color);
                 color: var(--second-color);
-                border-radius: 50%;
+                
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
                 text-decoration: none;
+
+                border-radius: 50%;
             }
 
             li a span {
-                color: var(--primary-color);
-
                 font-family: 'Poppins', sans-serif;
                 padding: .4rem 1rem;
 
                 display: none;
             }
 
-            li a:hover {
-                border-radius: 20% / 50%;
-                span {
-                    display: block;
-                }
-            }
-
             li a .icon-menu {
+                background: var(--second-color);
+                color: var(--primary-color);
+                
                 font-size: 2.9rem;
                 padding: .2rem;
-                color: var(--primary-color);
+
+                border-radius: 50%;
             }
         }
     }

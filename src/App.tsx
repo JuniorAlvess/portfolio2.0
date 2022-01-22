@@ -3,7 +3,8 @@ import projects from './assets/projects.json';
 import Project from './components/project';
 
 import { AiOutlineHome } from 'react-icons/ai';
-import { GrProjects, GrContact } from 'react-icons/gr';
+import { BiMessageSquareDetail } from 'react-icons/bi';
+import { IoMdCodeWorking } from 'react-icons/io';
 import { CgUser } from 'react-icons/cg'
 
 
@@ -13,9 +14,9 @@ function App() {
     <div className="container">
       <nav className='side-menu'>
         <ul>
-          <li><a href="#work"> <span>Work</span> <AiOutlineHome className='icon-menu' /> </a></li>
-          <li> <a href="#work"> <span>Resume</span> <GrProjects className='icon-menu' /> </a> </li>
-          <li> <a href="#work"> <span>Contact</span> <GrContact className='icon-menu' color='#fff' /> </a> </li>
+          <li> <a href="#work"> <span>Work</span> <IoMdCodeWorking className='icon-menu' /> </a> </li>
+          <li> <a href="#resume"> <span>Resume</span> <CgUser className='icon-menu' /> </a> </li>
+          <li> <a href="#contact"> <span>Contact</span> <BiMessageSquareDetail className='icon-menu' /> </a> </li>
         </ul>
       </nav>
 
