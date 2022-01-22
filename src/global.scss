@@ -148,13 +148,18 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            gap: 1rem;
 
             img {
-                width: 40%;
-                height: 100%;
+                width: 450px;
+                height: 650px;
+
+                border-radius: 1rem;
                 filter: grayscale(100%);
 
                 transition: filter 0.3s;
+                box-shadow: .3rem .3rem .3rem var(--third-color);
             }
 
             article {
@@ -337,6 +342,10 @@ body {
             flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+
+        header>section>article {
+            height: 100%;
         }
     }
 

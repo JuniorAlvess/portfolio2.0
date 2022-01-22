@@ -1,4 +1,4 @@
-import photo from './assets/mario.png';
+import photo from './assets/me.jpeg';
 import projects from './assets/projects.json';
 import Project from './components/project';
 
@@ -60,9 +60,9 @@ function App() {
           </p>
 
           <div className="filter-projects">
-            <button>All (5)</button>
+            {/* <button>All (5)</button>
             <button>Front-end (5)</button>
-            <button>Back-end (0)</button>
+            <button>Back-end (0)</button> */}
           </div>
           <div className="project-container">
             {projects.map((project, index) => <Project key={index} project={project} />)}
