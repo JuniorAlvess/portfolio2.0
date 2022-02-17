@@ -1,7 +1,10 @@
 .project {
     width: clamp(19rem, 21vw, 21rem);
     padding-bottom: 1rem;
-    box-shadow: 1px 5px 15px 0px rgba(0, 0, 0, 0.3);
+    transition: .3s ease-out;
+    &:hover {
+        box-shadow: 0rem .1rem .1rem var(--third-color);
+    }
     border-radius: 1rem;
 
     .imgContainer {
@@ -28,7 +31,7 @@
         text-decoration: none;
         transition: opacity 0.3s;
 
-        margin: .5rem;
+        margin: 1rem;
         letter-spacing: .03rem;
     }
 

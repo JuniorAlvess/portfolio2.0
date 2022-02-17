@@ -6,10 +6,13 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { BiMessageSquareDetail } from 'react-icons/bi';
 import { IoMdCodeWorking } from 'react-icons/io';
 import { CgUser } from 'react-icons/cg'
+import { useEffect } from 'react';
 
 
 function App() {
-  console.log(projects);
+  useEffect(() => {
+    console.log(window.location);
+  }, [window.location])
   return (
     <div className="container">
       <nav className='side-menu'>
@@ -67,6 +70,17 @@ function App() {
           <div className="project-container">
             {projects.map((project, index) => <Project key={index} project={project} />)}
           </div>
+        </section>
+
+        <section className='resume'>
+          <h2 id="resume">Resume</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, laudantium modi. 
+            Possimus quam distinctio ratione eaque quis hic molestias enim aperiam. 
+            Fuga repellat nam in placeat cum voluptate maxime laborum!
+          </p>
+
+          <h3>Education</h3>
         </section>
       </main>
     </div>
