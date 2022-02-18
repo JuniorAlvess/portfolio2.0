@@ -2,9 +2,9 @@
     width: clamp(19rem, 21vw, 21rem);
     padding-bottom: 1rem;
     transition: .3s ease-out;
-    &:hover {
-        box-shadow: 0rem .1rem .1rem var(--third-color);
-    }
+    // &:hover {
+    //     box-shadow: 0rem .1rem .1rem var(--third-color);
+    // }
     border-radius: 1rem;
 
     .imgContainer {

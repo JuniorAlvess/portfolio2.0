@@ -18,9 +18,6 @@ interface IProject {
     project: IProjectProps;
 }
 
-
-
-
 const Project = ({ project }: IProject) => {                                                          
     return (
         <div className={styles.project}>

@@ -22,6 +22,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    ::selection {
+        background: var(--third-color);
+        color: var(--primary-color);
+    }
 }
 
 .container {
@@ -114,7 +119,7 @@ body {
 
 
     header {
-        margin-bottom: 2rem;
+        margin-bottom: 5rem;
 
         nav>ul {
             background: var(--primary-color);
@@ -124,7 +129,8 @@ body {
             align-items: center;
 
             padding: 1rem 0;
-            margin-bottom: 1rem;
+
+            // margin-bottom: 1.5rem;
 
             li {
                 margin: 0 1rem;
@@ -155,12 +161,13 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 90vh;
             gap: 5rem;
 
-            img {
+            &>img {
                 width: 450px;
                 height: 650px;
+
                 object-fit: cover;
 
                 border-radius: 6px;
@@ -227,19 +234,6 @@ body {
             margin-bottom: 1rem;
         }
 
-        &>h3 {
-            color: var(--primary-color);
-            background: var(--second-color);
-
-            text-align: center;
-            font-size: clamp(1.2rem, 1.5vw, 2.5rem);
-            font-weight: 500;
-            font-family: 'Roboto', sans-serif;
-
-            padding: .1rem .2rem;
-            letter-spacing: .05rem;
-        }
-
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -296,8 +290,59 @@ body {
         &.resume {
             width: 100%;
             text-align: center;
+
             p {
-                width: clamp(23rem, 40vw, 50rem);
+                width: clamp(23rem, 50vw, 50rem);
+            }
+        }
+
+        &.resume>section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .5rem;
+
+            h3 {
+                // display: ;
+                color: var(--primary-color);
+                background: var(--second-color);
+
+                text-align: center;
+                font-size: clamp(1.2rem, 1.5vw, 2.5rem);
+                font-weight: 500;
+                font-family: 'Roboto', sans-serif;
+
+                margin: 2rem;
+                padding: .1rem .2rem;
+                letter-spacing: .05rem;
+            }
+
+            strong {
+                font-size: clamp(1rem, 1.2vw, 1.5rem);
+                font-weight: 700;
+                font-family: 'Roboto', sans-serif;
+
+                color: var(--second-color);
+                text-decoration: none;
+                transition: opacity 0.3s;
+
+                letter-spacing: .05rem;
+            }
+
+            p {
+                font-size: clamp(.9rem, 1vw, 1.3rem);
+            }
+
+            span {
+                font-size: clamp(.7rem, .9vw, 1.2rem);
+                font-weight: 700;
+                font-family: 'Roboto', sans-serif;
+
+                color: var(--third-color);
+                text-decoration: none;
+                transition: opacity 0.3s;
+
+                letter-spacing: .05rem;
             }
         }
     }
@@ -368,6 +413,27 @@ body {
     }
 }
 
+@media (max-height: 650px) {
+    .container>header>section {
+        margin-top: 7rem;
+    }
+}
+
+@media (max-width: 1366px) {
+    .container>header {
+        margin-bottom: 2.2rem;
+
+        nav>ul {
+            margin-bottom: 1.5rem;
+        }
+
+        section>img {
+            width: 350px;
+            height: 550px;
+        }
+    }
+}
+
 @media (max-width: 900px) {
     .container {
         width: 95vw;
@@ -376,10 +442,6 @@ body {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-        }
-
-        header>section>article {
-            height: 100%;
         }
     }
 
@@ -390,10 +452,28 @@ body {
         nav.side-menu {
             display: none;
         }
+
+        header {
+            nav>ul {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1;
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                transition: filter .3s ease-in-out;
+            }
+        }
+    }
+
+    .container>header {
+        margin-bottom: 2.2rem;
     }
 
     .container>header>section {
         flex-direction: column;
+        gap: 2rem;
 
         img {
             height: 300px;

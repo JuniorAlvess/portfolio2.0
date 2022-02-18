@@ -1,18 +1,19 @@
-import photo from './assets/me.jpeg';
-import projects from './assets/projects.json';
-import Project from './components/project';
+import { useEffect, useState } from 'react';
+import { useScroll } from './hooks/getScroll'
+import { useLoading } from './hooks/getLoad'
 
 import { AiOutlineHome } from 'react-icons/ai';
 import { BiMessageSquareDetail } from 'react-icons/bi';
 import { IoMdCodeWorking } from 'react-icons/io';
 import { CgUser } from 'react-icons/cg'
-import { useEffect } from 'react';
 
+import photo from './assets/me2.png';
+import projects from './assets/projects.json';
+import Project from './components/project';
 
 function App() {
-  useEffect(() => {
-    console.log(window.location);
-  }, [window.location])
+  const { scroll } = useScroll();
+  const { loading } = useLoading();
   return (
     <div className="container">
       <nav className='side-menu'>
@@ -25,7 +26,7 @@ function App() {
 
       <header>
         <nav>
-          <ul>
+          <ul style={window.matchMedia('(max-width: 790px)').matches && scroll > 10 ? {filter: 'drop-shadow(1rem 0 0.75rem var(--third-color))'} : undefined}>
             <li> <a href="#work">Work</a> </li>
             <li> <a href="#work">Resume</a> </li>
             <li> <a href="#work"> Contact</a> </li>
@@ -75,12 +76,17 @@ function App() {
         <section className='resume'>
           <h2 id="resume">Resume</h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, laudantium modi. 
-            Possimus quam distinctio ratione eaque quis hic molestias enim aperiam. 
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, laudantium modi.
+            Possimus quam distinctio ratione eaque quis hic molestias enim aperiam.
             Fuga repellat nam in placeat cum voluptate maxime laborum!
           </p>
 
-          <h3>Education</h3>
+          <section>
+            <h3>Education</h3>
+            <strong>Análise e Desenvolvimento de Sistemas</strong>
+            <p>Universidade Nove de Julho (Uninove)</p>
+            <span>Feb 2019 - Jun 2021</span>
+          </section>
         </section>
       </main>
     </div>
