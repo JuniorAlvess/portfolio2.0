@@ -253,6 +253,10 @@ body {
             text-align: center;
         }
 
+        &>p {
+            margin-bottom: 2rem;
+        }
+
         .filter-projects {
             align-self: baseline;
             margin: 2rem 1rem;
@@ -344,10 +348,40 @@ body {
 
                 letter-spacing: .05rem;
             }
+
+            ol {
+                // border: 1px solid;
+                display: flex;
+                gap: 5rem;
+                ul {
+                    // border: 1px solid;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+
+                    li {
+                        font-size: clamp(.7rem, .9vw, 1.2rem);
+                        font-weight: 700;
+                        font-family: 'Roboto', sans-serif;
+
+                        color: var(--third-color);
+                        text-decoration: none;
+                        transition: opacity 0.3s;
+
+                        letter-spacing: .05rem;
+                        list-style: none;
+                    }
+                }
+            }    
+        }
+        a {
+            margin-top: 2rem;
         }
     }
 
-    button {
+    button, main>section>a {
         font-size: clamp(1rem, 1vw, 1.8rem);
         font-weight: 400;
         font-family: 'Roboto', sans-serif;
@@ -387,7 +421,7 @@ body {
         box-shadow: 0rem .1rem .1rem var(--third-color);
     }
 
-    button {
+    button, main>section>a {
         &:first-of-type {
             &:hover {
                 background: var(--primary-color);

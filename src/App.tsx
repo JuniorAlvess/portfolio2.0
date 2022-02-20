@@ -26,9 +26,9 @@ function App() {
 
       <header>
         <nav>
-          <ul style={window.matchMedia('(max-width: 790px)').matches && scroll > 10 ? {filter: 'drop-shadow(1rem 0 0.75rem var(--third-color))'} : undefined}>
+          <ul style={window.matchMedia('(max-width: 790px)').matches && scroll > 10 ? { filter: 'drop-shadow(1rem 0 0.75rem var(--third-color))' } : undefined}>
             <li> <a href="#work">Work</a> </li>
-            <li> <a href="#work">Resume</a> </li>
+            <li> <a href="#resume">Resume</a> </li>
             <li> <a href="#work"> Contact</a> </li>
           </ul>
         </nav>
@@ -64,9 +64,9 @@ function App() {
           </p>
 
           <div className="filter-projects">
-            {/* <button>All (5)</button>
+            <button>All (5)</button>
             <button>Front-end (5)</button>
-            <button>Back-end (0)</button> */}
+            <button>Back-end (0)</button>
           </div>
           <div className="project-container">
             {projects.map((project, index) => <Project key={index} project={project} />)}
@@ -83,10 +83,43 @@ function App() {
 
           <section>
             <h3>Education</h3>
-            <strong>Análise e Desenvolvimento de Sistemas</strong>
-            <p>Universidade Nove de Julho (Uninove)</p>
-            <span>Feb 2019 - Jun 2021</span>
+            <strong> Análise e Desenvolvimento de Sistemas </strong>
+            <p> University Nove de Julho (Uninove) </p>
+            <span> Feb 2019 - Jun 2021 </span>
           </section>
+
+          <section>
+            <h3>Work Experience</h3>
+            <strong> FullStack Developer </strong>
+            <p> BizSys </p>
+            <span> Sep 2021 - Present </span>
+          </section>
+
+          <section>
+            <h3> Skills and Tools </h3>
+            <ol>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+              </ul>
+              <ul>
+                <li>React.js</li>
+                <li>Node.js</li>
+                <li>Sass</li>
+                <li>Rest API</li>
+              </ul>
+              <ul>
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>GitLab</li>
+                <li>Insomnia</li>
+              </ul>
+            </ol>
+          </section>
+
+          <a href="./assets/" download="mario.png">Download CV (PDF)</a>
         </section>
       </main>
     </div>
