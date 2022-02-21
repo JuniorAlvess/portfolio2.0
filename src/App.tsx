@@ -1,19 +1,41 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, FormEvent } from 'react';
 import { useScroll } from './hooks/getScroll'
 import { useLoading } from './hooks/getLoad'
+import emailjs from '@emailjs/browser';
+import{ init } from '@emailjs/browser';
 
 import { AiOutlineHome } from 'react-icons/ai';
 import { BiMessageSquareDetail } from 'react-icons/bi';
 import { IoMdCodeWorking } from 'react-icons/io';
 import { CgUser } from 'react-icons/cg'
+import { FiSend } from 'react-icons/fi';
+import { HiOutlineArrowCircleUp  } from 'react-icons/hi'
 
 import photo from './assets/me2.png';
 import projects from './assets/projects.json';
 import Project from './components/project';
 
+init("user_vyUWjXUA5AnP9Cqfmn2x7");
 function App() {
   const { scroll } = useScroll();
   const { loading } = useLoading();
+  
+
+  const form = useRef<any>();
+
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      'service_g75ti5e', 
+      'template_qpdqtud', 
+      form.current, 'user_vyUWjXUA5AnP9Cqfmn2x7')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
   return (
     <div className="container">
       <nav className='side-menu'>
@@ -29,7 +51,7 @@ function App() {
           <ul style={window.matchMedia('(max-width: 790px)').matches && scroll > 10 ? { filter: 'drop-shadow(1rem 0 0.75rem var(--third-color))' } : undefined}>
             <li> <a href="#work">Work</a> </li>
             <li> <a href="#resume">Resume</a> </li>
-            <li> <a href="#work"> Contact</a> </li>
+            <li> <a href="#contact"> Contact</a> </li>
           </ul>
         </nav>
 
@@ -120,6 +142,21 @@ function App() {
           </section>
 
           <a href="./assets/" download="mario.png">Download CV (PDF)</a>
+        </section>
+        <section>
+          <h2 id="contact">Contact</h2>
+          <p>
+            Let me know if you are interested in my services or collaboration.
+            <br />
+            I will reply as soon as possible.
+          </p>
+
+          <form ref={form} onSubmit={sendEmail}>
+            <input type="text" name="user_name" placeholder='Enter your full name' required />
+            <input type="email" name="user_email" placeholder='Enter your email address' required />
+            <textarea rows={7} name="message" placeholder='Tell me' required />
+            <button type="submit" value="Send"> <FiSend /> Send </button>
+          </form>
         </section>
       </main>
     </div>
