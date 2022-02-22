@@ -1,15 +1,17 @@
 import { useEffect, useState, useRef, FormEvent } from 'react';
+import axios from 'axios';
 import { useScroll } from './hooks/getScroll'
 import { useLoading } from './hooks/getLoad'
 import emailjs from '@emailjs/browser';
-import{ init } from '@emailjs/browser';
+import { init } from '@emailjs/browser';
+import toast, { Toaster } from 'react-hot-toast';
 
 import { AiOutlineHome } from 'react-icons/ai';
 import { BiMessageSquareDetail } from 'react-icons/bi';
 import { IoMdCodeWorking } from 'react-icons/io';
 import { CgUser } from 'react-icons/cg'
 import { FiSend } from 'react-icons/fi';
-import { HiOutlineArrowCircleUp  } from 'react-icons/hi'
+import { HiOutlineArrowCircleUp } from 'react-icons/hi'
 
 import photo from './assets/me2.png';
 import projects from './assets/projects.json';
@@ -17,25 +19,43 @@ import Project from './components/project';
 
 init("user_vyUWjXUA5AnP9Cqfmn2x7");
 function App() {
+  const [user_email, setUser_email] = useState<string>('');
+  const [user_name, setUser_name] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
   const { scroll } = useScroll();
   const { loading } = useLoading();
-  
-
+  const techs = projects.map(project => project.techs).flat().map(tech => tech.tech);
+  var techsFiltered = techs.filter((tech, i) => techs.indexOf(tech) === i);
   const form = useRef<any>();
-
-  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
+  
+  const sendEmail = async (e: FormEvent) => {
     e.preventDefault();
-
-    emailjs.sendForm(
-      'service_g75ti5e', 
-      'template_qpdqtud', 
-      form.current, 'user_vyUWjXUA5AnP9Cqfmn2x7')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
+    if (user_email === '' || user_name === '' || message === '') {
+      toast.error('Please fill all fields!');
+      return;
+    }
+    try {
+      const sendEmail = await axios.post("https://api.emailjs.com/api/v1.0/email/send", {
+        service_id: 'service_g75ti5e',
+        template_id: 'template_qpdqtud',
+        user_id: 'user_vyUWjXUA5AnP9Cqfmn2x7',
+        template_params: {
+          user_email: user_email,
+          user_name: user_name,
+          message: message
+        }
+      })
+      if (sendEmail.status === 200) {
+        toast.success("Email sent successfully!");
+        setUser_email('');
+        setUser_name('');
+        setMessage('');
+      }
+    } catch (err) {
+      toast.error('Error sending email!');
+    }
   };
+
   return (
     <div className="container">
       <nav className='side-menu'>
@@ -46,7 +66,7 @@ function App() {
         </ul>
       </nav>
 
-      <header>
+      <header id="home">
         <nav>
           <ul style={window.matchMedia('(max-width: 790px)').matches && scroll > 10 ? { filter: 'drop-shadow(1rem 0 0.75rem var(--third-color))' } : undefined}>
             <li> <a href="#work">Work</a> </li>
@@ -66,7 +86,9 @@ function App() {
             </p>
             <button
               title='Contact me'
-              role="Contact me">Contact me</button>
+              role="Contact me"
+              onClick={() => { window.location.href = '#contact' }}
+            >Contact me</button>
             <button
               title='Check my work'
               role='Check my work'
@@ -86,9 +108,10 @@ function App() {
           </p>
 
           <div className="filter-projects">
-            <button>All (5)</button>
-            <button>Front-end (5)</button>
-            <button>Back-end (0)</button>
+            <button>All ({techs.length})</button>
+            {techsFiltered.map(tech => (
+              <button>{techs.filter((e, i) => techs.indexOf(tech) === i) && tech} ({techs.filter(t => t === tech).length})</button>
+            ))}
           </div>
           <div className="project-container">
             {projects.map((project, index) => <Project key={index} project={project} />)}
@@ -152,13 +175,41 @@ function App() {
           </p>
 
           <form ref={form} onSubmit={sendEmail}>
-            <input type="text" name="user_name" placeholder='Enter your full name' required />
-            <input type="email" name="user_email" placeholder='Enter your email address' required />
-            <textarea rows={7} name="message" placeholder='Tell me' required />
-            <button type="submit" value="Send"> <FiSend /> Send </button>
+            <input
+              type="text"
+              name="user_name"
+              placeholder='Enter your full name'
+              value={user_name}
+              onChange={(e) => setUser_name(e.target.value)}
+              required
+            />
+            <input
+              type="email"
+              name="user_email"
+              placeholder='Enter your email address'
+              value={user_email}
+              onChange={(e) => setUser_email(e.target.value)}
+              required
+            />
+            <textarea
+              rows={7}
+              name="message"
+              placeholder='Tell me'
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+            />
+            <button type="submit"> <FiSend className='icon' /> Send </button>
           </form>
         </section>
+        <HiOutlineArrowCircleUp
+          className={scroll > 500 ? 'arrow-up enable' : 'arrow-up'}
+          onClick={() => { window.location.href = '#home' }}
+        />
       </main>
+      <Toaster
+        position='bottom-left'
+      />
     </div>
   );
 }

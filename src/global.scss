@@ -15,6 +15,23 @@ html {
     scroll-behavior: smooth;
 }
 
+.arrow-up {
+    position: fixed;
+    right: -5rem;
+    bottom: 2rem;
+    font-size: clamp(2.5rem, 3vw ,5rem);
+    cursor: pointer;
+    
+    transition: all .3s ease-in-out;
+    
+    &:hover {
+        color: var(--third-color);
+    }
+}
+.enable {
+    right: 1rem;
+}
+
 body {
     background: var(--primary-color);
     color: var(--second-color);
@@ -417,6 +434,8 @@ body {
                 gap: .5rem;
                 width: clamp(7rem, 8vw, 15rem);
             }
+            // button>.icon {
+            // }
         }
     }
 
