@@ -576,10 +576,7 @@ body {
     }
 }
 
-@media (max-height: 769px) {
-    .cursor {
-        display: none;
-    }
+@media (max-height: 650px) {
     .container>header>section {
         margin-top: 7rem;
     }
@@ -615,6 +612,9 @@ body {
 
 @media (max-width: 850px) {
     .container {
+        .cursor {
+            display: none;
+        }
         nav.side-menu {
             display: none;
         }
