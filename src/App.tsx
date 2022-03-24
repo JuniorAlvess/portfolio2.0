@@ -26,8 +26,10 @@ function App() {
   const { loading } = useLoading();
   const techs = projects.map(project => project.techs).flat().map(tech => tech.tech);
   var techsFiltered = techs.filter((tech, i) => techs.indexOf(tech) === i);
+
   const form = useRef<any>();
-  
+  const followingCursor = useRef<any>(null);
+  const container = useRef<any>(null);
   const sendEmail = async (e: FormEvent) => {
     e.preventDefault();
     if (user_email === '' || user_name === '' || message === '') {
@@ -56,8 +58,45 @@ function App() {
     }
   };
 
+  const followCursor = (e: any) => {
+    let y = e.clientY;
+    let x = e.clientX;
+    if (followingCursor.current) {
+      followingCursor.current.style.top = `${y}px`;
+      followingCursor.current.style.left = `${x}px`;
+    }
+
+    console.log(y, x);
+  }
+
+  document.addEventListener('mousemove', (e) => {
+    let y = e.clientY;
+    let x = e.clientX;
+    if (followingCursor.current) {
+      followingCursor.current.style.top = `${y}px`;
+      followingCursor.current.style.left = `${x}px`;
+    }
+  });
+
+  const bubble = () => {
+    for (let i = 0; i < 200; i++) {
+      let bubble = document.createElement('i');
+      let x = Math.floor((Math.random() * window.innerWidth));
+      let y = Math.floor(Math.random() * window.innerHeight);
+      let size = Math.random() * 8;
+      
+      bubble.classList.add('bubble');
+      bubble.style.left = `${x}px`;
+      bubble.style.top = `${y}px`;
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      container.current?.appendChild(bubble);
+    }
+  }
+  useEffect(() => { bubble(); }, [])
+
   return (
-    <div className="container">
+    <div ref={container} className="container">
       <nav className='side-menu'>
         <ul>
           <li> <a href="#work"> <span>Work</span> <IoMdCodeWorking className='icon-menu' /> </a> </li>
@@ -68,7 +107,7 @@ function App() {
 
       <header id="home">
         <nav>
-          <ul style={window.matchMedia('(max-width: 790px)').matches && scroll > 10 ? { filter: 'drop-shadow(1rem 0 0.75rem var(--third-color))' } : undefined}>
+          <ul style={window.matchMedia('(max-width: 790px)').matches && scroll > 10 ? { filter: 'drop-shadow(1rem 0 0.75rem var(--third-color))', zIndex: 2 } : undefined}>
             <li> <a href="#work">Work</a> </li>
             <li> <a href="#resume">Resume</a> </li>
             <li> <a href="#contact"> Contact</a> </li>
@@ -108,7 +147,7 @@ function App() {
           </p>
 
           <div className="filter-projects">
-            <button>All ({techs.length})</button>
+            <button>All ({projects.length})</button>
             {techsFiltered.map(tech => (
               <button>{techs.filter((e, i) => techs.indexOf(tech) === i) && tech} ({techs.filter(t => t === tech).length})</button>
             ))}
@@ -128,7 +167,7 @@ function App() {
 
           <section>
             <h3>Education</h3>
-            <strong> Análise e Desenvolvimento de Sistemas </strong>
+            <strong> Analysis and Systems Development </strong>
             <p> University Nove de Julho (Uninove) </p>
             <span> Feb 2019 - Jun 2021 </span>
           </section>
@@ -207,6 +246,9 @@ function App() {
           onClick={() => { window.location.href = '#home' }}
         />
       </main>
+      <div className="cursor" ref={followingCursor}>
+
+      </div>
       <Toaster
         position='bottom-left'
       />
