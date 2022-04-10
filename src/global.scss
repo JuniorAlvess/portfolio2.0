@@ -10,6 +10,9 @@
     padding: 0;
     box-sizing: border-box;
     cursor: none;
+    :is(button, a, li) {
+        cursor: pointer;
+    }
 
     &:hover ~ .cursor {
         border: 2px solid var(--second-color);

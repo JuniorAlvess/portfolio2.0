@@ -47,7 +47,7 @@
         "linkTo": "https://www.typescriptlang.org/"
       },
       {
-        "tech": "Sass",
+        "tech": "css",
         "linkTo": "https://sass-lang.com/"
       },
       {
@@ -63,7 +63,7 @@
     "img": "./project.png",
     "title": "Let Me Ask",
     "techs": [{
-        "tech": "TypeScript",
+        "tech": "javascript",
         "linkTo": "https://www.typescriptlang.org/"
       },
       {
@@ -83,7 +83,7 @@
     "img": "./project.png",
     "title": "Let Me Ask",
     "techs": [{
-        "tech": "TypeScript",
+        "tech": "javascript",
         "linkTo": "https://www.typescriptlang.org/"
       },
       {

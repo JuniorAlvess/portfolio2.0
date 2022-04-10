@@ -18,7 +18,8 @@ interface IProject {
     project: IProjectProps;
 }
 
-const Project = ({ project }: IProject) => {                                                          
+const Project = ({ project }: IProject) => {     
+    // console.log(project)                                                     
     return (
         <div className={styles.project}>
             <div className={styles.imgContainer}>

@@ -18,18 +18,33 @@ import projects from './assets/projects.json';
 import Project from './components/project';
 
 init("user_vyUWjXUA5AnP9Cqfmn2x7");
+
+/**
+ * TODO:
+ * Filter technologies (Done!)
+ * Add my social network
+ * Insert my resume 
+ * Create a animation button loading 
+ * make a text resume 
+ * make a description projects in english
+ */
+
 function App() {
   const [user_email, setUser_email] = useState<string>('');
   const [user_name, setUser_name] = useState<string>('');
   const [message, setMessage] = useState<string>('');
+  const [filteredProjects, setFilteredProjects] = useState<string>('all');
+  const [filterProjects, setFilterProjects] = useState<any>();
   const { scroll } = useScroll();
   const { loading } = useLoading();
+
   const techs = projects.map(project => project.techs).flat().map(tech => tech.tech);
-  var techsFiltered = techs.filter((tech, i) => techs.indexOf(tech) === i);
+  let techsFiltered = techs.filter((tech, i) => techs.indexOf(tech) === i);
 
   const form = useRef<any>();
   const followingCursor = useRef<any>(null);
   const container = useRef<any>(null);
+
   const sendEmail = async (e: FormEvent) => {
     e.preventDefault();
     if (user_email === '' || user_name === '' || message === '') {
@@ -58,17 +73,6 @@ function App() {
     }
   };
 
-  const followCursor = (e: any) => {
-    let y = e.clientY;
-    let x = e.clientX;
-    if (followingCursor.current) {
-      followingCursor.current.style.top = `${y}px`;
-      followingCursor.current.style.left = `${x}px`;
-    }
-
-    console.log(y, x);
-  }
-
   document.addEventListener('mousemove', (e) => {
     let y = e.clientY;
     let x = e.clientX;
@@ -84,7 +88,7 @@ function App() {
       let x = Math.floor((Math.random() * window.innerWidth));
       let y = Math.floor(Math.random() * window.innerHeight);
       let size = Math.random() * 8;
-      
+
       bubble.classList.add('bubble');
       bubble.style.left = `${x}px`;
       bubble.style.top = `${y}px`;
@@ -93,8 +97,16 @@ function App() {
       container.current?.appendChild(bubble);
     }
   }
-  useEffect(() => { bubble(); }, [])
+  useEffect(() => {
+    bubble();
+  }, [])
 
+  // continuar
+  // useEffect(() => {
+  //   projects.forEach(project => project.techs.filter(tech => setFilterProjects(tech.tech.toLocaleLowerCase() === filteredProjects.toLocaleLowerCase())));
+  // }, [filteredProjects])
+
+  console.log(filteredProjects)
   return (
     <div ref={container} className="container">
       <nav className='side-menu'>
@@ -147,13 +159,20 @@ function App() {
           </p>
 
           <div className="filter-projects">
-            <button>All ({projects.length})</button>
+            <button onClick={() => setFilteredProjects('all')}>All ({projects.length})</button>
             {techsFiltered.map(tech => (
-              <button>{techs.filter((e, i) => techs.indexOf(tech) === i) && tech} ({techs.filter(t => t === tech).length})</button>
+              <button onClick={() => setFilteredProjects(tech)}>{techs.filter((e, i) => techs.indexOf(tech) === i) && tech} ({techs.filter(t => t === tech).length})</button>
             ))}
           </div>
           <div className="project-container">
-            {projects.map((project, index) => <Project key={index} project={project} />)}
+            {
+              projects.map((project, index) =>
+                filteredProjects === 'all' ? <Project key={index} project={project} /> :
+                  project.techs.map(tech => tech.tech.toLocaleLowerCase() === filteredProjects.toLocaleLowerCase() && (
+                    <Project key={index} project={project} />
+                  ))
+              )
+            }
           </div>
         </section>
 
