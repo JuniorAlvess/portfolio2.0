@@ -9,9 +9,12 @@ import toast, { Toaster } from 'react-hot-toast';
 import { AiOutlineHome } from 'react-icons/ai';
 import { BiMessageSquareDetail } from 'react-icons/bi';
 import { IoMdCodeWorking } from 'react-icons/io';
-import { CgUser } from 'react-icons/cg'
+import { CgUser } from 'react-icons/cg';
 import { FiSend } from 'react-icons/fi';
-import { HiOutlineArrowCircleUp } from 'react-icons/hi'
+import { HiOutlineArrowCircleUp } from 'react-icons/hi';
+import { RiLinkedinLine } from 'react-icons/ri';
+import { SiWhatsapp } from 'react-icons/si';
+
 
 import photo from './assets/me2.png';
 import projects from './assets/projects.json';
@@ -22,11 +25,12 @@ init("user_vyUWjXUA5AnP9Cqfmn2x7");
 /**
  * TODO:
  * Filter technologies (Done!)
- * Add my social network
- * Insert my resume 
- * Create a animation button loading 
+ * Add my social network (Done!)
+ * Create a animation button loading (Done!) 
+ * Insert my resume (Working on it)
  * make a text resume 
  * make a description projects in english
+ * resolve a bug of width on filter projects
  */
 
 function App() {
@@ -35,6 +39,7 @@ function App() {
   const [message, setMessage] = useState<string>('');
   const [filteredProjects, setFilteredProjects] = useState<string>('all');
   const [filterProjects, setFilterProjects] = useState<any>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const { scroll } = useScroll();
   const { loading } = useLoading();
 
@@ -51,6 +56,7 @@ function App() {
       toast.error('Please fill all fields!');
       return;
     }
+    setIsLoading(true);
     try {
       const sendEmail = await axios.post("https://api.emailjs.com/api/v1.0/email/send", {
         service_id: 'service_g75ti5e',
@@ -63,6 +69,7 @@ function App() {
         }
       })
       if (sendEmail.status === 200) {
+        setIsLoading(false);
         toast.success("Email sent successfully!");
         setUser_email('');
         setUser_name('');
@@ -114,6 +121,8 @@ function App() {
           <li> <a href="#work"> <span>Work</span> <IoMdCodeWorking className='icon-menu' /> </a> </li>
           <li> <a href="#resume"> <span>Resume</span> <CgUser className='icon-menu' /> </a> </li>
           <li> <a href="#contact"> <span>Contact</span> <BiMessageSquareDetail className='icon-menu' /> </a> </li>
+          <li> <a href="https://www.linkedin.com/in/ejalves/" target="_blank"> <span>Linkedin</span> <RiLinkedinLine className='icon-menu' /> </a> </li>
+          <li> <a href="https://web.whatsapp.com/send?phone=5511930197938" target="_blank"> <span>WhatsApp</span> <SiWhatsapp className='icon-menu' /> </a> </li>
         </ul>
       </nav>
 
@@ -257,7 +266,7 @@ function App() {
               onChange={(e) => setMessage(e.target.value)}
               required
             />
-            <button type="submit"> <FiSend className='icon' /> Send </button>
+            <button type="submit"> <FiSend style={isLoading ? {animation: 'iconAnim 1s infinite alternate'} : {animation: ''}} /> {!isLoading ? 'Send' : ''} </button>
           </form>
         </section>
         <HiOutlineArrowCircleUp

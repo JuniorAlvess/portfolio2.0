@@ -166,7 +166,7 @@ body {
                 justify-content: flex-end;
                 text-decoration: none;
 
-                border-radius: 50%;
+                // border-radius: 50%;
             }
 
             li a span {
@@ -185,7 +185,7 @@ body {
                 font-size: 2.9rem;
                 padding: .2rem;
 
-                border-radius: 50%;
+                // border-radius: 50%;
             }
         }
     }
@@ -490,10 +490,19 @@ body {
                 justify-content: center;
                 align-items: center;
                 gap: .5rem;
-                width: clamp(7rem, 8vw, 15rem);
+                max-width: clamp(7rem, 8vw, 15rem);
             }
-            // button>.icon {
-            // }
+            @keyframes iconAnim {
+                0% {
+                    transform: translateY(0) translateX(0);
+                }
+                50% {
+                    transform: translateY(.5rem) translateX(-1rem);
+                }
+                100% {
+                    transform: translateY(0) translateX(0);
+                }
+            }
         }
     }
 
@@ -508,7 +517,6 @@ body {
         color: var(--second-color);
         text-decoration: none;
 
-        // cursor: pointer;
         list-style: none;
 
         border-radius: .5rem;
