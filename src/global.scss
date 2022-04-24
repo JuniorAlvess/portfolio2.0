@@ -10,11 +10,12 @@
     padding: 0;
     box-sizing: border-box;
     cursor: none;
+
     :is(button, a, li) {
         cursor: pointer;
     }
 
-    &:hover ~ .cursor {
+    &:hover~.cursor {
         border: 2px solid var(--second-color);
         background: transparent !important;
     }
@@ -37,6 +38,7 @@ html {
         border-radius: 1rem;
         transition: 0.2s ease-in-out;
     }
+
     ::-webkit-scrollbar-thumb:active {
         background: var(--third-color);
     }
@@ -46,15 +48,16 @@ html {
     position: fixed;
     right: -5rem;
     bottom: 2rem;
-    font-size: clamp(2.5rem, 3vw ,5rem);
+    font-size: clamp(2.5rem, 3vw, 5rem);
     // cursor: pointer;
-    
+
     transition: all .3s ease-in-out;
-    
+
     &:hover {
         color: var(--third-color);
     }
 }
+
 .enable {
     right: 1rem;
 }
@@ -81,21 +84,26 @@ body {
     z-index: -1;
     pointer-events: none;
 }
+
 .bubble:nth-child(even) {
     background: transparent;
     border: 2px solid var(--second-color);
 }
+
 @keyframes animate {
     0% {
         transform: translateY(0);
         opacity: 0;
     }
+
     10% {
         opacity: 1;
     }
+
     90% {
         opacity: 1;
     }
+
     100% {
         transform: translateY(-2000%);
         opacity: 0;
@@ -333,7 +341,6 @@ body {
         }
 
         .filter-projects {
-            align-self: baseline;
             margin: 2rem 1rem;
 
             button {
@@ -344,17 +351,20 @@ body {
                 font-weight: bold;
                 font-family: 'Poppins', sans-serif;
 
+                // margin-top: 1rem;
                 padding: 0.5rem;
                 border-radius: 1rem;
                 border: none;
                 transition: opacity 0.3s;
 
-                &:first-of-type {
-                    background: var(--second-color);
-                }
-
                 &:hover {
                     opacity: 70%;
+                }
+                &:focus {
+                    background: var(--second-color);
+                }
+                &:disabled {
+                    background: var(--second-color);
                 }
             }
         }
@@ -492,13 +502,16 @@ body {
                 gap: .5rem;
                 max-width: clamp(7rem, 8vw, 15rem);
             }
+
             @keyframes iconAnim {
                 0% {
                     transform: translateY(0) translateX(0);
                 }
+
                 50% {
                     transform: translateY(.5rem) translateX(-1rem);
                 }
+
                 100% {
                     transform: translateY(0) translateX(0);
                 }
@@ -540,16 +553,17 @@ body {
         }
     }
 
-    
+
     .cursor {
         position: fixed;
         width: 1.5rem;
         height: 1.5rem;
         background-color: var(--second-color);
-        
+
         border-radius: 50%;
         // transition: all 0.3s ease-in-out;
-        transform: translate(-50%, -50%);;
+        transform: translate(-50%, -50%);
+        ;
         pointer-events: none;
         cursor: none;
     }
@@ -612,6 +626,18 @@ body {
     .container {
         width: 95vw;
 
+        main>section .filter-projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: baseline;
+            align-items: center;
+            gap: .5rem;
+
+            button {
+                margin: 0rem;
+            }
+        }
+
         .project-container {
             flex-direction: column;
             justify-content: center;
@@ -626,6 +652,7 @@ body {
         .cursor {
             display: none;
         }
+
         nav.side-menu {
             display: none;
         }

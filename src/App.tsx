@@ -34,7 +34,7 @@ init("user_vyUWjXUA5AnP9Cqfmn2x7");
 
 /**
  * FIXME:
- * resolve a bug of width on filter projects
+ * resolve a bug of width on filter projects (Done!)
  * resolve a bug on email.js
  */
 
@@ -117,8 +117,6 @@ function App() {
   // useEffect(() => {
   //   projects.forEach(project => project.techs.filter(tech => setFilterProjects(tech.tech.toLocaleLowerCase() === filteredProjects.toLocaleLowerCase())));
   // }, [filteredProjects])
-
-  console.log(filteredProjects)
   return (
     <div ref={container} className="container">
       <nav className='side-menu'>
@@ -171,7 +169,7 @@ function App() {
           </p>
 
           <div className="filter-projects">
-            <button onClick={() => setFilteredProjects('all')}>All ({projects.length})</button>
+            <button disabled={filteredProjects === 'all'} onClick={() => setFilteredProjects('all')}>All ({projects.length})</button>
             {techsFiltered.map(tech => (
               <button onClick={() => setFilteredProjects(tech)}>{techs.filter((e, i) => techs.indexOf(tech) === i) && tech} ({techs.filter(t => t === tech).length})</button>
             ))}
