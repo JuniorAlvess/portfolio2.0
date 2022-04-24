@@ -30,7 +30,12 @@ init("user_vyUWjXUA5AnP9Cqfmn2x7");
  * Insert my resume (Working on it)
  * make a text resume 
  * make a description projects in english
+ */
+
+/**
+ * FIXME:
  * resolve a bug of width on filter projects
+ * resolve a bug on email.js
  */
 
 function App() {
@@ -231,7 +236,7 @@ function App() {
             </ol>
           </section>
 
-          <a href="./assets/" download="mario.png">Download CV (PDF)</a>
+          <a href="./assets/" download="myProfile.pdf">Download CV (PDF)</a>
         </section>
         <section>
           <h2 id="contact">Contact</h2>
