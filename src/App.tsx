@@ -15,10 +15,10 @@ import { HiOutlineArrowCircleUp } from 'react-icons/hi';
 import { RiLinkedinLine } from 'react-icons/ri';
 import { SiWhatsapp } from 'react-icons/si';
 
-
 import photo from './assets/me2.png';
 import projects from './assets/projects.json';
 import Project from './components/project';
+
 
 init("user_vyUWjXUA5AnP9Cqfmn2x7");
 
@@ -27,9 +27,9 @@ init("user_vyUWjXUA5AnP9Cqfmn2x7");
  * Filter technologies (Done!)
  * Add my social network (Done!)
  * Create a animation button loading (Done!) 
- * Insert my resume (Working on it)
- * make a text resume 
- * make a description projects in english
+ * Insert my resume (Done!)
+ * make a text resume (Done!)
+ * make a description projects in english (Done!)
  */
 
 /**
@@ -145,9 +145,7 @@ function App() {
           <article>
             <h1>Hi, I'm Junior and I'm a <strong>FullStack Developer</strong>.</h1>
             <p>
-              Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris
-              se pirulitá.Interagi no mé, cursus quis, vehicula ac nisi.Delegadis gente finis,
-              bibendum egestas augue arcu ut est.Paisis, filhis, espiritis santis.
+              I am a developer with startup experience. My main stack is HTML, CSS, JavaScript, TypeScript, React.js, Node.js, Sass.
             </p>
             <button
               title='Contact me'
@@ -193,9 +191,9 @@ function App() {
         <section className='resume'>
           <h2 id="resume">Resume</h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, laudantium modi.
-            Possimus quam distinctio ratione eaque quis hic molestias enim aperiam.
-            Fuga repellat nam in placeat cum voluptate maxime laborum!
+            I entered the job market in 2015 and have been honing my soft skills ever since.
+            I started studying programming in 2019 when I started a course in Systems Analysis and Development
+            at Universidade Nove de Julho (Uninove) where I will graduate in July 2021.
           </p>
 
           <section>
@@ -236,7 +234,7 @@ function App() {
             </ol>
           </section>
 
-          <a href="./assets/" download="myProfile.pdf">Download CV (PDF)</a>
+          <a href="/assets/junior-alves.pdf" download>Download CV (PDF)</a>
         </section>
         <section>
           <h2 id="contact">Contact</h2>
@@ -271,7 +269,7 @@ function App() {
               onChange={(e) => setMessage(e.target.value)}
               required
             />
-            <button type="submit"> <FiSend style={isLoading ? {animation: 'iconAnim 1s infinite alternate'} : {animation: ''}} /> {!isLoading ? 'Send' : ''} </button>
+            <button type="submit"> <FiSend style={isLoading ? { animation: 'iconAnim 1s infinite alternate' } : { animation: '' }} /> {!isLoading ? 'Send' : ''} </button>
           </form>
         </section>
         <HiOutlineArrowCircleUp
