@@ -1,6 +1,5 @@
-[
-  {
-    "img": "./project.png",
+[{
+    "img": "./assets/projects-images/letMeAsk.png",
     "title": "Let Me Ask",
     "techs": [{
         "tech": "TypeScript",
@@ -20,83 +19,43 @@
     "linkGithub": "https://github.com/JuniorAlvess/letmeask-nlw6"
   },
   {
-    "img": "./project.png",
-    "title": "Let Me Ask",
+    "img": "./assets/projects-images/mercadoLivreAr.png",
+    "title": "Black Friday - Mercado Livre",
+    "techs": [{
+        "tech": "JavaScript",
+        "linkTo": "https://www.javascript.com/"
+      },
+      {
+        "tech": "React.js",
+        "linkTo": "https://pt-br.reactjs.org/"
+      },
+      {
+        "tech": "Sass",
+        "linkTo": "https://sass-lang.com/"
+      }
+    ],
+    "description": "Experiência Ar para caça de ofertas no site e app do Mercado livre! Ao entrar na experiência AR (Augmented Reality) o usuário é surpreendido com um 3D especial e um banner com link para as ofertas.",
+    "linkPreview": "",
+    "linkGithub": ""
+  },
+  {
+    "img": "./assets/projects-images/heresTheMovie.png",
+    "title": "Here's The Movie (In development 🚧)",
     "techs": [{
         "tech": "TypeScript",
         "linkTo": "https://www.typescriptlang.org/"
       },
       {
-        "tech": "Sass",
-        "linkTo": "https://sass-lang.com/"
-      },
-      {
-        "tech": "Firebase",
-        "linkTo": "https://firebase.google.com/?gclid=Cj0KCQiAraSPBhDuARIsAM3Js4rVU6mI7RUaqeNpQ9JhTPFCIQcK1SWnitJfbnrJLwgl8xy3LHLgJ4caAoEWEALw_wcB&gclsrc=aw.ds"
-      }
-    ],
-    "description": "Letmeask é perfeito para criadores de conteúdos poderem criar salas de Q&A com o seu público, de uma forma muito organizada e democrática.",
-    "linkPreview": "https://letmeask-bb1c5.web.app/",
-    "linkGithub": "https://github.com/JuniorAlvess/letmeask-nlw6"
-  },
-  {
-    "img": "./project.png",
-    "title": "Let Me Ask",
-    "techs": [{
-        "tech": "TypeScript",
-        "linkTo": "https://www.typescriptlang.org/"
-      },
-      {
-        "tech": "css",
-        "linkTo": "https://sass-lang.com/"
-      },
-      {
-        "tech": "Firebase",
-        "linkTo": "https://firebase.google.com/?gclid=Cj0KCQiAraSPBhDuARIsAM3Js4rVU6mI7RUaqeNpQ9JhTPFCIQcK1SWnitJfbnrJLwgl8xy3LHLgJ4caAoEWEALw_wcB&gclsrc=aw.ds"
-      }
-    ],
-    "description": "Letmeask é perfeito para criadores de conteúdos poderem criar salas de Q&A com o seu público, de uma forma muito organizada e democrática.",
-    "linkPreview": "https://letmeask-bb1c5.web.app/",
-    "linkGithub": "https://github.com/JuniorAlvess/letmeask-nlw6"
-  },
-  {
-    "img": "./project.png",
-    "title": "Let Me Ask",
-    "techs": [{
-        "tech": "javascript",
-        "linkTo": "https://www.typescriptlang.org/"
+        "tech": "Next.js",
+        "linkTo": "https://nextjs.org/"
       },
       {
         "tech": "Sass",
         "linkTo": "https://sass-lang.com/"
-      },
-      {
-        "tech": "Firebase",
-        "linkTo": "https://firebase.google.com/?gclid=Cj0KCQiAraSPBhDuARIsAM3Js4rVU6mI7RUaqeNpQ9JhTPFCIQcK1SWnitJfbnrJLwgl8xy3LHLgJ4caAoEWEALw_wcB&gclsrc=aw.ds"
       }
     ],
-    "description": "Letmeask é perfeito para criadores de conteúdos poderem criar salas de Q&A com o seu público, de uma forma muito organizada e democrática.",
-    "linkPreview": "https://letmeask-bb1c5.web.app/",
-    "linkGithub": "https://github.com/JuniorAlvess/letmeask-nlw6"
-  },
-  {
-    "img": "./project.png",
-    "title": "Let Me Ask",
-    "techs": [{
-        "tech": "javascript",
-        "linkTo": "https://www.typescriptlang.org/"
-      },
-      {
-        "tech": "Sass",
-        "linkTo": "https://sass-lang.com/"
-      },
-      {
-        "tech": "Firebase",
-        "linkTo": "https://firebase.google.com/?gclid=Cj0KCQiAraSPBhDuARIsAM3Js4rVU6mI7RUaqeNpQ9JhTPFCIQcK1SWnitJfbnrJLwgl8xy3LHLgJ4caAoEWEALw_wcB&gclsrc=aw.ds"
-      }
-    ],
-    "description": "Letmeask é perfeito para criadores de conteúdos poderem criar salas de Q&A com o seu público, de uma forma muito organizada e democrática.",
-    "linkPreview": "https://letmeask-bb1c5.web.app/",
-    "linkGithub": "https://github.com/JuniorAlvess/letmeask-nlw6"
+    "description": "O Here's The Movie é um site para quem estiver procurando filmes/series para assistir. Nele você encontrará diversas categorias de filmes e series, com avaliação, cast e muito mais.",
+    "linkPreview": "",
+    "linkGithub": ""
   }
 ]

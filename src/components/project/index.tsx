@@ -18,7 +18,7 @@ interface IProject {
     project: IProjectProps;
 }
 
-const Project = ({ project }: IProject) => {     
+const Project = ({ project }: IProject) => {
     // console.log(project)                                                     
     return (
         <div className={styles.project}>
@@ -38,9 +38,18 @@ const Project = ({ project }: IProject) => {
             </p>
 
             <div className={styles.buttonContainer}>
-                <a href={project.linkPreview} target="_blank"> <FiEye />  Preview </a>
-                <a href={project.linkGithub} target="_blank"><FiGithub /> Github Repo</a>
-                {/* <button><FiEye />  Preview</button><button><FiGithub /> Github Repo</button> */}
+                <a
+                    style={!project.linkPreview ? { display: "none" } : {}}
+                    href={project.linkPreview}
+                    target="_blank">
+                    <FiEye />  Preview
+                </a>
+                <a
+                    style={!project.linkGithub ? { display: "none" } : {}}
+                    href={project.linkGithub}
+                    target="_blank">
+                    <FiGithub /> Github Repo
+                </a>
             </div>
         </div>
     );
