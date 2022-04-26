@@ -10,7 +10,7 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { BiMessageSquareDetail } from 'react-icons/bi';
 import { IoMdCodeWorking } from 'react-icons/io';
 import { CgUser } from 'react-icons/cg';
-import { FiSend } from 'react-icons/fi';
+import { FiSend, FiGithub } from 'react-icons/fi';
 import { HiOutlineArrowCircleUp } from 'react-icons/hi';
 import { RiLinkedinLine } from 'react-icons/ri';
 import { SiWhatsapp } from 'react-icons/si';
@@ -125,6 +125,7 @@ function App() {
           <li> <a href="#resume"> <span>Resume</span> <CgUser className='icon-menu' /> </a> </li>
           <li> <a href="#contact"> <span>Contact</span> <BiMessageSquareDetail className='icon-menu' /> </a> </li>
           <li> <a href="https://www.linkedin.com/in/ejalves/" target="_blank"> <span>Linkedin</span> <RiLinkedinLine className='icon-menu' /> </a> </li>
+          <li> <a href="https://github.com/JuniorAlvess" target="_blank"> <span>GitHub</span> <FiGithub className='icon-menu' /> </a> </li>
           <li> <a href="https://web.whatsapp.com/send?phone=5511930197938" target="_blank"> <span>WhatsApp</span> <SiWhatsapp className='icon-menu' /> </a> </li>
         </ul>
       </nav>
