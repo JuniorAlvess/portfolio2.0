@@ -68,9 +68,11 @@ function App() {
         template_id: 'template_qpdqtud',
         user_id: 'user_vyUWjXUA5AnP9Cqfmn2x7',
         template_params: {
+          to_name: "Junior Alves",
           user_email: user_email,
           user_name: user_name,
-          message: message
+          message: message,
+          reply_to: user_email
         }
       })
       if (sendEmail.status === 200) {
