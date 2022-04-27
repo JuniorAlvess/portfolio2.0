@@ -192,7 +192,7 @@ function App() {
           <p>
             I entered the job market in 2015 and have been honing my soft skills ever since.
             I started studying programming in 2019 when I started a course in Systems Analysis and Development
-            at Universidade Nove de Julho (Uninove) where I will graduate in July 2021.
+            at Universidade Nove de Julho (Uninove) where I graduated in July 2021.
           </p>
 
           <section>
