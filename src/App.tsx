@@ -15,7 +15,8 @@ import { HiOutlineArrowCircleUp } from 'react-icons/hi';
 import { RiLinkedinLine } from 'react-icons/ri';
 import { SiWhatsapp } from 'react-icons/si';
 
-import photo from './assets/me2.png';
+import photo from './assets/eu.png';
+
 import projects from './assets/projects.json';
 import Project from './components/project';
 
@@ -126,9 +127,9 @@ function App() {
           <li> <a href="#work"> <span>Work</span> <IoMdCodeWorking className='icon-menu' /> </a> </li>
           <li> <a href="#resume"> <span>Resume</span> <CgUser className='icon-menu' /> </a> </li>
           <li> <a href="#contact"> <span>Contact</span> <BiMessageSquareDetail className='icon-menu' /> </a> </li>
-          <li> <a href="https://www.linkedin.com/in/ejalves/" target="_blank"> <span>Linkedin</span> <RiLinkedinLine className='icon-menu' /> </a> </li>
-          <li> <a href="https://github.com/JuniorAlvess" target="_blank"> <span>GitHub</span> <FiGithub className='icon-menu' /> </a> </li>
-          <li> <a href="https://web.whatsapp.com/send?phone=5511930197938" target="_blank"> <span>WhatsApp</span> <SiWhatsapp className='icon-menu' /> </a> </li>
+          <li> <a href="https://www.linkedin.com/in/ejalves/" target="_blank" rel="noreferrer"> <span>Linkedin</span> <RiLinkedinLine className='icon-menu' /> </a> </li>
+          <li> <a href="https://github.com/JuniorAlvess" target="_blank" rel="noreferrer"> <span>GitHub</span> <FiGithub className='icon-menu' /> </a> </li>
+          <li> <a href="https://web.whatsapp.com/send?phone=5511930197938" target="_blank" rel="noreferrer"> <span>WhatsApp</span> <SiWhatsapp className='icon-menu' /> </a> </li>
         </ul>
       </nav>
 
