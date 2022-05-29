@@ -271,7 +271,7 @@ function App() {
               onChange={(e) => setMessage(e.target.value)}
               required
             />
-            <button type="submit"> <FiSend style={isLoading ? { animation: 'iconAnim 1s infinite alternate' } : { }} /> {!isLoading ? 'Send' : ''} </button>
+            <button type="submit"> <FiSend style={isLoading ? { animation: 'iconAnim 1s infinite alternate' } : {}} /> {!isLoading ? 'Send' : ''} </button>
           </form>
         </section>
         <HiOutlineArrowCircleUp

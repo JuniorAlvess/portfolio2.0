@@ -61,7 +61,7 @@
     }
 
     .description {
-        display: -webkit-box !important;
+        display: -webkit-box;
         font-size: clamp(.8rem, .8vw, 1.5rem);
         font-weight: 500;
         font-family: 'Poppins', sans-serif;
@@ -78,6 +78,11 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: normal;
+        transition: display 0.3s;
+        &:hover {
+            display: block;
+        }
+        // z-index: 2;
     }
 
     .buttonContainer {
@@ -144,5 +149,11 @@
         background: var(--second-color);
         color: var(--primary-color);
         border: 1px solid var(--second-color);
+    }
+}
+
+@media (max-width: 768px) {
+    .project .description {
+        display: block;
     }
 }

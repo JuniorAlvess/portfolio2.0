@@ -347,7 +347,7 @@ body {
                 background: var(--quaternary-color);
                 color: var(--primary-color);
 
-                font-size: clamp(.5rem, .8vw, .8rem);
+                font-size: clamp(.6rem, .8vw, .8rem);
                 font-weight: bold;
                 font-family: 'Poppins', sans-serif;
 
@@ -629,7 +629,7 @@ body {
         main>section .filter-projects {
             display: flex;
             flex-wrap: wrap;
-            justify-content: baseline;
+            justify-content: center;
             align-items: center;
             gap: .5rem;
 

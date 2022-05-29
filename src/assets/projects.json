@@ -34,7 +34,7 @@
         "linkTo": "https://sass-lang.com/"
       }
     ],
-    "description": "Experiência Ar para caça de ofertas no site e app do Mercado livre! Ao entrar na experiência AR (Augmented Reality) o usuário é surpreendido com um 3D especial e um banner com link para as ofertas.",
+    "description": "Experiência AR (Augmented Reality) para caça de ofertas no site e app do Mercado livre. Ao entrar na experiência AR o usuário é surpreendido com um 3D especial e um banner com link para as ofertas.",
     "linkPreview": "",
     "linkGithub": ""
   },
@@ -55,7 +55,7 @@
       }
     ],
     "description": "O Here's The Movie é um site para quem estiver procurando filmes/series para assistir. Nele você encontrará diversas categorias de filmes e series, com avaliação, cast e muito mais.",
-    "linkPreview": "",
-    "linkGithub": ""
+    "linkPreview": "https://heres-the-movie.vercel.app/",
+    "linkGithub": "https://github.com/JuniorAlvess/heres-the-movie"
   }
 ]

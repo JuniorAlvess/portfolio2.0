@@ -29,25 +29,25 @@ const Project = ({ project }: IProject) => {
             <div className={styles.techs}>
                 {project.techs.map((tech, index) => {
                     return (
-                        <a key={index} href={tech.linkTo} target="_blank">{tech.tech}</a>
+                        <a key={index} href={tech.linkTo} target="_blank" rel="noreferrer">{tech.tech}</a>
                     )
                 })}
             </div>
-            <p className={styles.description}>
-                {project.description}
-            </p>
+            <div className={styles.description}>
+                {project.description} 
+            </div>
 
             <div className={styles.buttonContainer}>
                 <a
                     style={!project.linkPreview ? { display: "none" } : {}}
                     href={project.linkPreview}
-                    target="_blank">
+                    target="_blank" rel="noreferrer">
                     <FiEye />  Preview
                 </a>
                 <a
                     style={!project.linkGithub ? { display: "none" } : {}}
                     href={project.linkGithub}
-                    target="_blank">
+                    target="_blank" rel="noreferrer">
                     <FiGithub /> Github Repo
                 </a>
             </div>
