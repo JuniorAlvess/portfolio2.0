@@ -418,6 +418,11 @@ body {
                 letter-spacing: .05rem;
             }
 
+            strong>a {
+                text-decoration: none;
+                color: var(--second-color);
+            }
+
             p {
                 font-size: clamp(.9rem, 1vw, 1.3rem);
             }
@@ -458,6 +463,11 @@ body {
 
                         letter-spacing: .05rem;
                         list-style: none;
+                    }
+
+                    li>a {
+                        text-decoration: none;
+                        color: var(--third-color);
                     }
                 }
             }

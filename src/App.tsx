@@ -207,8 +207,8 @@ function App() {
 
           <section>
             <h3>Work Experience</h3>
-            <strong> FullStack Developer </strong>
-            <p> BizSys </p>
+            <strong> FullStack Developer at <a href="https://www.bizsys.com.br/" rel="noreferrer" target="_blank">(BizSys)</a> </strong>
+            <p> Development of web applications and special projects with React.js and Unity. Development and Maintenance of Rest APIs with PHP (Laravel) </p>
             <span> Sep 2021 - Present </span>
           </section>
 
@@ -216,22 +216,25 @@ function App() {
             <h3> Skills and Tools </h3>
             <ol>
               <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>TypeScript</li>
+                <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" rel="noreferrer" target="_blank">HTML</a></li>
+                <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" rel="noreferrer" target="_blank">CSS</a></li>
+                <li><a href="https://www.javascript.com/" rel="noreferrer" target="_blank">JavaScript</a></li>
+                <li><a href="https://www.typescriptlang.org/" rel="noreferrer" target="_blank">TypeScript</a></li>
+                <li><a href="https://www.php.net/" rel="noreferrer" target="_blank">PHP</a></li>
               </ul>
               <ul>
-                <li>React.js</li>
-                <li>Node.js</li>
-                <li>Sass</li>
-                <li>Rest API</li>
+                <li><a href="https://pt-br.reactjs.org/" rel="noreferrer" target="_blank">React.js</a></li>
+                <li><a href="https://nodejs.org/en/" rel="noreferrer" target="_blank">Node.js</a></li>
+                <li><a href="https://laravel.com/" rel="noreferrer" target="_blank">Laravel</a></li>
+                <li><a href="https://www.sass-lang.com/" rel="noreferrer" target="_blank">Sass</a></li>
+                <li><a href="https://styled-components.com/" rel="noreferrer" target="_blank">Styled-components</a></li>
               </ul>
               <ul>
-                <li>Git</li>
-                <li>GitHub</li>
-                <li>GitLab</li>
-                <li>Insomnia</li>
+              <li><a href="https://www.redhat.com/pt-br/topics/api/what-is-a-rest-api" rel="noreferrer" target="_blank">Rest API</a></li>
+              <li><a href="https://insomnia.rest/" rel="noreferrer" target="_blank">Insomnia</a></li>
+              <li><a href="https://git-scm.com/" rel="noreferrer" target="_blank">Git</a></li>
+              <li><a href="https://github.com/" rel="noreferrer" target="_blank">GitHub</a></li>
+              <li><a href="https://about.gitlab.com/" rel="noreferrer" target="_blank">GitLab</a></li>
               </ul>
             </ol>
           </section>
