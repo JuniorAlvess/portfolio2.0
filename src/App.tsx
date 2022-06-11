@@ -217,7 +217,7 @@ function App() {
             <ol>
               <ul>
                 <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" rel="noreferrer" target="_blank">HTML</a></li>
-                <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" rel="noreferrer" target="_blank">CSS</a></li>
+                <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" rel="noreferrer" target="_blank">CSS</a></li>
                 <li><a href="https://www.javascript.com/" rel="noreferrer" target="_blank">JavaScript</a></li>
                 <li><a href="https://www.typescriptlang.org/" rel="noreferrer" target="_blank">TypeScript</a></li>
                 <li><a href="https://www.php.net/" rel="noreferrer" target="_blank">PHP</a></li>
@@ -230,7 +230,7 @@ function App() {
                 <li><a href="https://styled-components.com/" rel="noreferrer" target="_blank">Styled-components</a></li>
               </ul>
               <ul>
-              <li><a href="https://www.redhat.com/pt-br/topics/api/what-is-a-rest-api" rel="noreferrer" target="_blank">Rest API</a></li>
+              <li><a href="https://www.redhat.com/pt-br/topics/api/what-is-a-rest-api" rel="noreferrer" target="_blank">API RESTful</a></li>
               <li><a href="https://insomnia.rest/" rel="noreferrer" target="_blank">Insomnia</a></li>
               <li><a href="https://git-scm.com/" rel="noreferrer" target="_blank">Git</a></li>
               <li><a href="https://github.com/" rel="noreferrer" target="_blank">GitHub</a></li>
