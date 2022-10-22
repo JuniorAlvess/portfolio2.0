@@ -406,7 +406,7 @@ body {
                 letter-spacing: .05rem;
             }
 
-            strong {
+            h4 {
                 font-size: clamp(1rem, 1.2vw, 1.5rem);
                 font-weight: 700;
                 font-family: 'Roboto', sans-serif;
@@ -418,7 +418,7 @@ body {
                 letter-spacing: .05rem;
             }
 
-            strong>a {
+            h4>a {
                 text-decoration: none;
                 color: var(--second-color);
             }
@@ -437,6 +437,10 @@ body {
                 transition: opacity 0.3s;
 
                 letter-spacing: .05rem;
+            }
+
+            span:not(:last-of-type) {
+                margin-bottom: 1rem;
             }
 
             ol {
