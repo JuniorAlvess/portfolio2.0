@@ -360,9 +360,11 @@ body {
                 &:hover {
                     opacity: 70%;
                 }
+
                 &:focus {
                     background: var(--second-color);
                 }
+
                 &:disabled {
                     background: var(--second-color);
                 }
@@ -682,6 +684,14 @@ body {
                 border-bottom-right-radius: 1rem;
                 transition: filter .3s ease-in-out;
             }
+        }
+
+        .project-container {
+            width: 90vw;
+            flex-direction: row;
+            flex-wrap: nowrap !important;
+            align-items: baseline;
+            overflow: auto;
         }
     }
 

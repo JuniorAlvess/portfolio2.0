@@ -79,9 +79,11 @@
         text-overflow: ellipsis;
         white-space: normal;
         transition: display 0.3s;
+
         &:hover {
             display: block;
         }
+
         // z-index: 2;
     }
 
@@ -153,7 +155,14 @@
 }
 
 @media (max-width: 768px) {
-    .project .description {
-        display: block;
+    .project {
+        width: 75vw;
+        .imgContainer {
+            width: inherit;
+        }
+
+        .description {
+            display: block;
+        }
     }
 }
