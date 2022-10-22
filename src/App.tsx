@@ -19,25 +19,10 @@ import photo from './assets/eu.png';
 
 import projects from './assets/projects.json';
 import Project from './components/project';
+import Role from './components/role';
 
 
 init("user_vyUWjXUA5AnP9Cqfmn2x7");
-
-/**
- * TODO:
- * Filter technologies (Done!)
- * Add my social network (Done!)
- * Create a animation button loading (Done!) 
- * Insert my resume (Done!)
- * make a text resume (Done!)
- * make a description projects in english (Done!)
- */
-
-/**
- * FIXME:
- * resolve a bug of width on filter projects (Done!)
- * resolve a bug on email.js
- */
 
 function App() {
   const [user_email, setUser_email] = useState<string>('');
@@ -200,16 +185,29 @@ function App() {
 
           <section>
             <h3>Education</h3>
-            <strong> Analysis and Systems Development </strong>
+            <h4> Analysis and Systems Development </h4>
             <p> University Nove de Julho (Uninove) </p>
             <span> Feb 2019 - Jun 2021 </span>
           </section>
 
           <section>
             <h3>Work Experience</h3>
-            <strong> FullStack Developer at <a href="https://www.bizsys.com.br/" rel="noreferrer" target="_blank">(BizSys)</a> </strong>
-            <p> Development of web applications and special projects with React.js and Unity. Development and Maintenance of Rest APIs with PHP (Laravel) </p>
-            <span> Sep 2021 - Present </span>
+            <Role
+              jobTitle="Full Stack Developer"
+              company="CoreBiz"
+              linkTo="https://www.corebiz.ag/pt/"
+              description="Maintenance in legacy ecommerce using HTML, CSS, JQuery, JavaScript ES6+. 
+              Creation and maintenance of templates on the VTEX platform (CMS). Development of pages and integrations with native and third-party APIs. 
+              Creation of pages and components using React.js. Development/maintenance of components and pages using VTEX IO"
+              duration="Jun 2022 - Present"
+            />
+            <Role
+              jobTitle="Full Stack Developer"
+              company="BizSys"
+              linkTo="https://www.bizsys.com.br/"
+              description="Development of web applications and special projects with React.js and Unity. Development and Maintenance of Rest APIs with PHP (Laravel)"
+              duration="Sep 2021 - Jun 2022"
+            />
           </section>
 
           <section>
@@ -230,16 +228,16 @@ function App() {
                 <li><a href="https://styled-components.com/" rel="noreferrer" target="_blank">Styled-components</a></li>
               </ul>
               <ul>
-              <li><a href="https://www.redhat.com/pt-br/topics/api/what-is-a-rest-api" rel="noreferrer" target="_blank">API RESTful</a></li>
-              <li><a href="https://insomnia.rest/" rel="noreferrer" target="_blank">Insomnia</a></li>
-              <li><a href="https://git-scm.com/" rel="noreferrer" target="_blank">Git</a></li>
-              <li><a href="https://github.com/" rel="noreferrer" target="_blank">GitHub</a></li>
-              <li><a href="https://about.gitlab.com/" rel="noreferrer" target="_blank">GitLab</a></li>
+                <li><a href="https://www.redhat.com/pt-br/topics/api/what-is-a-rest-api" rel="noreferrer" target="_blank">API RESTful</a></li>
+                <li><a href="https://insomnia.rest/" rel="noreferrer" target="_blank">Insomnia</a></li>
+                <li><a href="https://git-scm.com/" rel="noreferrer" target="_blank">Git</a></li>
+                <li><a href="https://github.com/" rel="noreferrer" target="_blank">GitHub</a></li>
+                <li><a href="https://about.gitlab.com/" rel="noreferrer" target="_blank">GitLab</a></li>
               </ul>
             </ol>
           </section>
 
-          <a href="/assets/junior-alves.pdf" download>Download CV (PDF)</a>
+          <a href="/assets/Ednaldo_Alves_Resume.pdf" download>Download CV (PDF)</a>
         </section>
         <section>
           <h2 id="contact">Contact</h2>
