@@ -76,20 +76,6 @@ body {
     }
 }
 
-.bubble {
-    position: fixed;
-    background: var(--second-color);
-    border-radius: 50%;
-    animation: animate 5s linear infinite;
-    z-index: -1;
-    pointer-events: none;
-}
-
-.bubble:nth-child(even) {
-    background: transparent;
-    border: 2px solid var(--second-color);
-}
-
 @keyframes animate {
     0% {
         transform: translateY(0);

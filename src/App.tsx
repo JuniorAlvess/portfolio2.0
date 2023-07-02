@@ -82,25 +82,6 @@ function App() {
     }
   });
 
-  const bubble = () => {
-    for (let i = 0; i < 200; i++) {
-      let bubble = document.createElement('i');
-      let x = Math.floor((Math.random() * window.innerWidth));
-      let y = Math.floor(Math.random() * window.innerHeight);
-      let size = Math.random() * 8;
-
-      bubble.classList.add('bubble');
-      bubble.style.left = `${x}px`;
-      bubble.style.top = `${y}px`;
-      bubble.style.width = `${size}px`;
-      bubble.style.height = `${size}px`;
-      container.current?.appendChild(bubble);
-    }
-  }
-  useEffect(() => {
-    bubble();
-  }, [])
-
   // continuar
   // useEffect(() => {
   //   projects.forEach(project => project.techs.filter(tech => setFilterProjects(tech.tech.toLocaleLowerCase() === filteredProjects.toLocaleLowerCase())));
