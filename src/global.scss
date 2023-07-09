@@ -366,6 +366,11 @@ body {
             justify-content: flex-start;
             flex-wrap: wrap;
             gap: 2rem;
+            transform: .3s ease-in-out;
+        }
+
+        .project-container>div:hover {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
         }
 
         &.resume {
@@ -666,11 +671,11 @@ body {
             overflow: hidden;
             z-index: 9999;
             height: 46px;
-            
+
             display: flex;
             align-items: end;
             justify-content: center;
-            
+
             transition: .3s ease-in-out;
             border-radius: 1rem 1rem 0 0;
         }
@@ -747,6 +752,15 @@ body {
             flex-wrap: nowrap !important;
             align-items: baseline;
             overflow: auto;
+            scroll-snap-type: x mandatory;
+            padding: 10px;
+            width: 100vw;
+        }
+
+        .project-container>div {
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
         }
     }
 
