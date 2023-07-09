@@ -6,14 +6,14 @@ import emailjs from '@emailjs/browser';
 import { init } from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
 
-import { AiOutlineHome } from 'react-icons/ai';
+import { FiPlusCircle } from 'react-icons/fi';
 import { BiMessageSquareDetail } from 'react-icons/bi';
 import { IoMdCodeWorking } from 'react-icons/io';
 import { CgUser } from 'react-icons/cg';
 import { FiSend, FiGithub } from 'react-icons/fi';
 import { HiOutlineArrowCircleUp } from 'react-icons/hi';
 import { RiLinkedinLine } from 'react-icons/ri';
-import { SiWhatsapp } from 'react-icons/si';
+import { AiOutlineWhatsApp } from 'react-icons/ai';
 
 import photo from './assets/eu.png';
 
@@ -30,6 +30,7 @@ function App() {
   const [message, setMessage] = useState<string>('');
   const [filteredProjects, setFilteredProjects] = useState<string>('all');
   const [filterProjects, setFilterProjects] = useState<any>();
+  const [activeMenuMobile, setActiveMenuMobile] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { scroll } = useScroll();
   const { loading } = useLoading();
@@ -88,14 +89,15 @@ function App() {
   // }, [filteredProjects])
   return (
     <div ref={container} className="container">
-      <nav className='side-menu'>
+      <nav className={activeMenuMobile ? 'side-menu active' : 'side-menu'}>
         <ul>
           <li> <a href="#work"> <span>Work</span> <IoMdCodeWorking className='icon-menu' /> </a> </li>
           <li> <a href="#resume"> <span>Resume</span> <CgUser className='icon-menu' /> </a> </li>
           <li> <a href="#contact"> <span>Contact</span> <BiMessageSquareDetail className='icon-menu' /> </a> </li>
           <li> <a href="https://www.linkedin.com/in/ejalves/" target="_blank" rel="noreferrer"> <span>Linkedin</span> <RiLinkedinLine className='icon-menu' /> </a> </li>
           <li> <a href="https://github.com/JuniorAlvess" target="_blank" rel="noreferrer"> <span>GitHub</span> <FiGithub className='icon-menu' /> </a> </li>
-          <li> <a href="https://web.whatsapp.com/send?phone=5511930197938" target="_blank" rel="noreferrer"> <span>WhatsApp</span> <SiWhatsapp className='icon-menu' /> </a> </li>
+          <li> <a href="https://web.whatsapp.com/send?phone=5511930197938" target="_blank" rel="noreferrer"> <span>WhatsApp</span> <AiOutlineWhatsApp className='icon-menu' /> </a> </li>
+          <li onClick={() => setActiveMenuMobile(!activeMenuMobile)}> <FiPlusCircle className={activeMenuMobile ? 'icon-menu active' : 'icon-menu'} /></li>
         </ul>
       </nav>
 
