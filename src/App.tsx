@@ -237,7 +237,7 @@ function App() {
             </ol>
           </section>
 
-          <a href="/assets/Ednaldo_Alves_Resume.pdf" download>Download CV (PDF)</a>
+          <a href="/assets/junior_alves_resume.pdf" download>Download CV (PDF)</a>
         </section>
         <section>
           <h2 id="contact">Contact</h2>
